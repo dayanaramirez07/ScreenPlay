@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {
                 "co.edu.udea.automatizacion.saucedemo.stepdefinitions",
-                "co.edu.udea.automatizacion.saucedemo.hooks"  // Incluir hooks
+                "co.edu.udea.automatizacion.saucedemo.hooks"  
         },
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {"pretty", "html:build/reports/cucumber.html"}

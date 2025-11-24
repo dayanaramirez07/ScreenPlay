@@ -20,7 +20,7 @@ public class CommonStepDefinitions {
     @Managed(driver = "chrome", uniqueSession = true)
     public WebDriver theDriver;
 
-    @Before(order = 1)  // Se ejecuta después del hook de WebDriver (order = 0)
+    @Before(order = 1)
     public void config() {
         OnStage.setTheStage(new OnlineCast());
         Actor user = OnStage.theActorCalled("user");

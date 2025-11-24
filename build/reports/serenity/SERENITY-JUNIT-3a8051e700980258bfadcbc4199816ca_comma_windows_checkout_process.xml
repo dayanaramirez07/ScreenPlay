@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Checkout process" skipped="0" tests="2" time="45.05" timestamp="2025-11-24 05:29:49"><testcase name="Successful purchase"/><testcase name="Purchase with missing information"/></testsuite>

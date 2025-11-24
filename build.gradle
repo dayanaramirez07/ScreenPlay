@@ -1,0 +1,101 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+	id 'io.github.jumosqu12.screenplayarchitecture' version '2.0.1'
+	id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+
+group 'co.edu.udea.automatizacion'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '4.1.20'  // Versión estable más reciente
+    serenityCucumberVersion = '4.1.20'
+    lombokVersion = '1.18.34'
+    junit = '4.13.2'
+    hamcrest = '1.3'
+    webDriverManagerVersion = '5.9.2'
+}
+
+dependencies {
+    // Serenity Core
+    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    
+    // Esta dependencia genera los reportes HTML
+    testImplementation "net.serenity-bdd:serenity-reports:$rootProject.ext.serenityVersion"
+    
+    // REST
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
+    
+    // WebDriver Management
+    implementation "io.github.bonigarcia:webdrivermanager:$rootProject.ext.webDriverManagerVersion"
+    
+    // Logging
+    implementation 'org.slf4j:slf4j-simple:2.0.16'
+
+    // Test compilation
+    testImplementation "junit:junit:$rootProject.ext.junit"
+    testImplementation "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrest"
+
+    // Lombok dependencies
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    // Additional library
+    implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.12.0'
+}
+
+tasks.named('test') {
+    systemProperty "file.encoding", "UTF-8"
+    
+    // Configuración para Cucumber
+    systemProperties System.properties
+    
+    // Asegurar que se ejecuten todos los tests
+    outputs.upToDateWhen { false }
+}
+
+// GENERACIÓN DE REPORTES HTML: Usa Maven Serenity Plugin
+tasks.register('aggregate', Exec) {
+    group = 'Serenity BDD'
+    description = 'Generate Serenity HTML reports from JSON test results'
+    
+    commandLine 'mvn', 'serenity:aggregate'
+    workingDir project.projectDir
+    
+    // Ignorar errores si Maven no está disponible
+    ignoreExitValue = true
+    
+    doFirst {
+        println "[INFO] Generando reportes HTML con Maven Serenity Plugin..."
+    }
+    
+    doLast {
+        def reportFile = file("build/reports/serenity/index.html")
+        if (reportFile.exists()) {
+            println "[SUCCESS] Reporte generado: ${reportFile.absolutePath}"
+        } else {
+            println "[WARNING] Reporte no generado. Ejecuta manualmente: mvn serenity:aggregate"
+        }
+    }
+}

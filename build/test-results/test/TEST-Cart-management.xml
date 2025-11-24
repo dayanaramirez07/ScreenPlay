@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cart management" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-24T22:29:12.179Z" hostname="DESKTOP-HEKBH6T" time="30.072">
+  <properties/>
+  <testcase name="Add items to the cart" classname="Cart management" time="30.072"/>
+  <system-out><![CDATA[
+Scenario: Add items to the cart                             ?[90m# src/test/resources/features/cart_management.feature:7?[0m
+  ?[32mGiven ?[0m?[32mI am logged in?[0m                                      ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAmLoggedIn()?[0m
+  ?[32mWhen ?[0m?[32mI add items to my order?[0m                              ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAddItemsToMyOrder()?[0m
+  ?[32mThen ?[0m?[32mthe cart icon shows the correct number of items?[0m      ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CartManagementStepDefinition.theCartIconShowsTheCorrectNumberOfItems()?[0m
+  ?[32mAnd ?[0m?[32mthe added items appear in the cart with their details?[0m ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CartManagementStepDefinition.theAddedItemsAppearInTheCartWithTheirDetails()?[0m
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  - - TEST STARTED
+Add items to the cart(cart-management;add-items-to-the-cart)
+--------------
+[Test worker] INFO co.edu.udea.automatizacion.saucedemo.hooks.WebDriverHooks - [SETUP] Configurando WebDriverManager para ChromeDriver...
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+[Test worker] INFO io.github.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.175/win64/chromedriver-win64.zip
+[Test worker] INFO io.github.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Dayana\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+[Test worker] INFO co.edu.udea.automatizacion.saucedemo.hooks.WebDriverHooks - [SUCCESS] ChromeDriver configurado correctamente
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [start-maximized, incognito, start-maximized, incognito, --remote-allow-origins=*, --disable-dev-shm-usage, --no-sandbox, --disable-gpu], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+nov 24, 2025 5:29:21 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find CDP implementation matching 142
+nov 24, 2025 5:29:21 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 142.0.7444.60. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - ?[92m- TEST PASSED
+Add items to the cart
+-------------?[0m
+]]></system-err>
+</testsuite>

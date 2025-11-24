@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Cart management</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Cart management</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Cart management</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">30.072s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Add items to the cart</td>
+<td class="success">30.072s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">
+Scenario: Add items to the cart                             ?[90m# src/test/resources/features/cart_management.feature:7?[0m
+  ?[32mGiven ?[0m?[32mI am logged in?[0m                                      ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAmLoggedIn()?[0m
+  ?[32mWhen ?[0m?[32mI add items to my order?[0m                              ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAddItemsToMyOrder()?[0m
+  ?[32mThen ?[0m?[32mthe cart icon shows the correct number of items?[0m      ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CartManagementStepDefinition.theCartIconShowsTheCorrectNumberOfItems()?[0m
+  ?[32mAnd ?[0m?[32mthe added items appear in the cart with their details?[0m ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CartManagementStepDefinition.theAddedItemsAppearInTheCartWithTheirDetails()?[0m
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre id="class-stderr">[Test worker] INFO  - - TEST STARTED
+Add items to the cart(cart-management;add-items-to-the-cart)
+--------------
+[Test worker] INFO co.edu.udea.automatizacion.saucedemo.hooks.WebDriverHooks - [SETUP] Configurando WebDriverManager para ChromeDriver...
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 142.0.7444.175 (resolved driver for Chrome 142)
+[Test worker] INFO io.github.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.175/win64/chromedriver-win64.zip
+[Test worker] INFO io.github.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Dayana\.cache\selenium\chromedriver\win64\142.0.7444.175\chromedriver.exe
+[Test worker] INFO co.edu.udea.automatizacion.saucedemo.hooks.WebDriverHooks - [SUCCESS] ChromeDriver configurado correctamente
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [start-maximized, incognito, start-maximized, incognito, --remote-allow-origins=*, --disable-dev-shm-usage, --no-sandbox, --disable-gpu], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+nov 24, 2025 5:29:21 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find CDP implementation matching 142
+nov 24, 2025 5:29:21 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 142.0.7444.60. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - ?[92m- TEST PASSED
+Add items to the cart
+-------------?[0m
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stderr">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.0</a> at 24 nov 2025 17:30:35</p>
+</div>
+</div>
+</body>
+</html>

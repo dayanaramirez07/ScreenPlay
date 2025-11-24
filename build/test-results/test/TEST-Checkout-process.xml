@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Checkout process" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-24T22:29:42.261Z" hostname="DESKTOP-HEKBH6T" time="52.045">
+  <properties/>
+  <testcase name="Successful purchase" classname="Checkout process" time="34.495"/>
+  <testcase name="Purchase with missing information" classname="Checkout process" time="17.55"/>
+  <system-out><![CDATA[
+Scenario: Successful purchase                               ?[90m# src/test/resources/features/checkout_process.feature:7?[0m
+  ?[32mGiven ?[0m?[32mI am logged in?[0m                                      ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAmLoggedIn()?[0m
+  ?[32mWhen ?[0m?[32mI add items to my order?[0m                              ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAddItemsToMyOrder()?[0m
+  ?[32mAnd ?[0m?[32mI complete the required steps?[0m                         ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CheckoutProcessStepDefinition.iCompleteTheRequiredSteps()?[0m
+  ?[32mThen ?[0m?[32mI can see the confirmation of the completed purchase?[0m ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CheckoutProcessStepDefinition.iCanSeeTheConfirmationOfTheCompletedPurchase()?[0m
+
+Scenario: Purchase with missing information                    ?[90m# src/test/resources/features/checkout_process.feature:13?[0m
+  ?[32mGiven ?[0m?[32mI am logged in?[0m                                         ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAmLoggedIn()?[0m
+  ?[32mWhen ?[0m?[32mI add items to my order?[0m                                 ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CommonStepDefinitions.iAddItemsToMyOrder()?[0m
+  ?[32mAnd ?[0m?[32mI skip required steps?[0m                                    ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CheckoutProcessStepDefinition.iSkipRequiredSteps()?[0m
+  ?[32mThen ?[0m?[32mI see error messages indicating the missing information?[0m ?[90m# co.edu.udea.automatizacion.saucedemo.stepdefinitions.CheckoutProcessStepDefinition.iSeeErrorMessagesIndicatingTheMissingInformation()?[0m
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  - - TEST STARTED
+Successful purchase(checkout-process;successful-purchase)
+--------------
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [start-maximized, incognito, start-maximized, incognito, --remote-allow-origins=*, --disable-dev-shm-usage, --no-sandbox, --disable-gpu], extensions: [], prefs: {credentials_enable_service: false, profile.password_manager_enabled: false}}}
+nov 24, 2025 5:29:50 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find CDP implementation matching 142
+nov 24, 2025 5:29:50 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 142.0.7444.60. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO  - ?[92m- TEST PASSED
+Successful purchase
+-------------?[0m
+[Test worker] INFO  - - TEST STARTED
+Purchase with missing information(checkout-process;purchase-with-missing-information)
+--------------
+[Test worker] INFO  - ?[92m- TEST PASSED
+Purchase with missing information
+-------------?[0m
+]]></system-err>
+</testsuite>
